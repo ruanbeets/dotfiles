@@ -17,7 +17,8 @@ The one-shot `panel.js` only acts if there is exactly one top panel containing
 one KVitals widget. It filters the **existing** pinned sensor identifiers to CPU
 usage/temperature, GPU usage/temperature, RAM percentage and network throughput.
 It removes that panel's standalone disk-activity widget and styles KVitals with
-14 px JetBrains Mono, cyan labels and cool grey values. It never invents GPU IDs,
+14 px JetBrains Mono, cyan labels and cool grey values. Network values are ordered
+download then upload, with a `NET ↓/↑` label. It never invents GPU IDs,
 changes the update interval, creates widgets or modifies the KVitals source.
 It preserves the existing panel dimensions and widget order.
 
@@ -55,8 +56,10 @@ and select it for each display. Monitor placement/scaling stays in System Settin
 If a running application still shows its old font/theme, close and reopen it;
 log out/in once for a fully consistent session. Konsole: **Settings → Manage
 Profiles → Batcomputer → Set as Default** is the fallback if an already-running
-Konsole process retains its previous default. **Settings → Toolbars Shown** can
-hide either toolbar; **Ctrl+Shift+M** restores the menu at any time.
+Konsole process retains its previous default. For minimal chrome, press
+**Ctrl+Shift+M**, then **Settings → Toolbars Shown** and uncheck Main Toolbar and
+Session Toolbar. Press **Ctrl+Shift+M** again to hide the menu. Toolbar visibility
+is stored in Qt window state; that generated geometry is deliberately not copied.
 
 KRunner shortcuts and native effects are left alone. If desired, enable stock
 Blur in **System Settings → Window Management → Desktop Effects**; the opaque

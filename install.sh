@@ -63,9 +63,8 @@ write_setting konsolerc TabBar ExpandTabWidth false
 write_setting konsolerc TabBar NewTabButton true
 write_setting konsolerc SplitView SplitViewVisibility ShowSplitHeaderWhenNeeded
 write_setting konsolerc 'MainWindow' MenuBar Disabled
-backup_file "$CONFIG_HOME/konsolerc"
-kwriteconfig6 --file "$CONFIG_HOME/konsolerc" --group MainWindow --group 'Toolbar mainToolBar' --key Visible Disabled
-kwriteconfig6 --file "$CONFIG_HOME/konsolerc" --group MainWindow --group 'Toolbar sessionToolbar' --key Visible Disabled
+# Toolbar visibility is saved in Qt window state, which is not portable.
+# Use Settings → Toolbars Shown once after installing (see kde/README.md).
 if ! $terminal_only; then bash "$ROOT/kde/apply.sh"; fi
 echo
 echo "Installed this run: ${missing[*]:-(none)}"

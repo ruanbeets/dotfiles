@@ -24,6 +24,7 @@ if (candidates.length !== 1) {
         vitals.writeConfig('fontBold', false);
         vitals.writeConfig('iconSize', 14);
         vitals.writeConfig('displayMode', 'text');
+        vitals.writeConfig('netLabel', 'NET ↓/↑');
         vitals.writeConfig('mergeFamilyMetrics', true);
         vitals.writeConfig('showSeparators', true);
         vitals.writeConfig('separatorOpacity', 0.28);
