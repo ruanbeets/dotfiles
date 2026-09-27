@@ -11,9 +11,9 @@ init_backup
 deploy_file "$ROOT/kde/Batcomputer.colors" "$DATA_HOME/color-schemes/Batcomputer.colors"
 # KDE's color tool may also export colors to GTK settings. Back those up too.
 for file in kdeglobals kwinrc kcminputrc plasmarc breezerc gtk-3.0/settings.ini gtk-4.0/settings.ini xsettingsd/xsettingsd.conf; do
-    backup_file "$CONFIG_HOME/$file"
+    prepare_config "$CONFIG_HOME/$file"
 done
-backup_file "$HOME/.gtkrc-2.0"
+prepare_config "$HOME/.gtkrc-2.0"
 write_setting kdeglobals General AccentColor '54,207,224'
 for key in font menuFont toolBarFont; do
     write_setting kdeglobals General "$key" 'Noto Sans,10,-1,5,400,0,0,0,0,0'

@@ -51,7 +51,9 @@ with tempfile.TemporaryDirectory(prefix="batcomputer-test-") as tmp:
     original.write_text("# existing config target\n")
     (fish_dir / "config.fish").symlink_to(original)
     (fish_dir / "functions/personal.fish").write_text("# unrelated file\n")
-    (home / ".config/kdeglobals").write_text("[Personal]\nKeepMe=yes\n")
+    original_kde = home / 'original-kdeglobals'
+    original_kde.write_text("[Personal]\nKeepMe=yes\n")
+    (home / ".config/kdeglobals").symlink_to(original_kde)
     before = snapshot(home)
     run([str(ROOT / "install.sh"), "--dry-run"], env)
     assert snapshot(home) == before, "dry-run changed files"
@@ -59,6 +61,7 @@ with tempfile.TemporaryDirectory(prefix="batcomputer-test-") as tmp:
     first_backup = next(p for p in (home / ".local/state/batcomputer/backups").iterdir())
     installed = snapshot(home)
     assert original.read_text() == "# existing config target\n", "followed and overwrote symlink target"
+    assert original_kde.read_text() == "[Personal]\nKeepMe=yes\n", "KConfig overwrote symlink target"
     assert not (fish_dir / "config.fish").is_symlink()
     assert "KeepMe=yes" in (home / ".config/kdeglobals").read_text()
     assert "ColorScheme=Batcomputer" in (home / ".config/kdeglobals").read_text()

@@ -57,6 +57,6 @@ if type -q zoxide
 end
 
 # Machine-local additions are intentionally outside Git.
-if test -r ~/.config/fish/local.fish
-    source ~/.config/fish/local.fish
+if test -r $__fish_config_dir/local.fish
+    source $__fish_config_dir/local.fish
 end

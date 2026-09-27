@@ -53,6 +53,19 @@ deploy_file() {
 
 write_setting() {
     local file=$1 group=$2 key=$3 value=$4
-    backup_file "$CONFIG_HOME/$file"
+    prepare_config "$CONFIG_HOME/$file"
     kwriteconfig6 --file "$CONFIG_HOME/$file" --group "$group" --key "$key" "$value"
+}
+
+prepare_config() {
+    local target=$1 tmp
+    backup_file "$target"
+    # KConfig may follow links. Materialize a private copy before updating keys,
+    # leaving the original symlink target (e.g. another dotfiles repo) untouched.
+    if [[ -L $target ]]; then
+        [[ ! -d $target ]] || { echo "Expected a config file: $target" >&2; exit 1; }
+        tmp=$(mktemp "$(dirname "$target")/.batcomputer-XXXX")
+        if [[ -f $target ]]; then cp -L -- "$target" "$tmp"; fi
+        mv -fT -- "$tmp" "$target"
+    fi
 }
