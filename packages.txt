@@ -1,0 +1,21 @@
+# Official Arch / CachyOS repository packages. No AUR or services.
+fish
+konsole
+ttf-jetbrains-mono-nerd
+noto-fonts
+breeze
+breeze-icons
+btop
+nvtop
+fastfetch
+fzf
+zoxide
+ripgrep
+fd
+bat
+eza
+jq
+git
+lazygit
+hyperfine
+tealdeer

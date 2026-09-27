@@ -1,0 +1,18 @@
+# Private machine state must never enter this repository.
+backups/
+*.bak
+*.log
+.DS_Store
+.env
+.env.*
+fish_variables
+fish_history
+*_history
+auth.json
+credentials*
+id_rsa*
+id_ed25519*
+plasma-org.kde.plasma.desktop-appletsrc
+kwinoutputconfig.json
+screenshots/*
+!screenshots/.gitkeep
