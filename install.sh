@@ -69,6 +69,12 @@ for stale in "$CONFIG_HOME/fish/functions/fish_prompt.fish"; do
         echo "Retired old prompt override: $stale"
     fi
 done
+old_fastfetch_logo="$CONFIG_HOME/fastfetch/logo.txt"
+if [[ -f $old_fastfetch_logo ]]; then
+    backup_file "$old_fastfetch_logo"
+    rm -- "$old_fastfetch_logo"
+    echo "Retired old custom Fastfetch logo: $old_fastfetch_logo"
+fi
 
 # Fisher reads this tracked list and is the only Fish prompt/plugin manager.
 # Both Fisher's installed-plugin list and Tide's universal settings live in
