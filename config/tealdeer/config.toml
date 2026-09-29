@@ -1,0 +1,24 @@
+[display]
+compact = true
+use_pager = false
+
+[updates]
+auto_update = false
+auto_update_interval_hours = 720
+
+[style.description]
+foreground = { rgb = { r = 232, g = 230, b = 234 } }
+
+[style.command_name]
+foreground = { rgb = { r = 215, g = 42, b = 192 } }
+bold = true
+
+[style.example_text]
+foreground = { rgb = { r = 246, g = 231, b = 43 } }
+
+[style.example_code]
+foreground = { rgb = { r = 248, g = 237, b = 67 } }
+
+[style.example_variable]
+foreground = { rgb = { r = 215, g = 42, b = 192 } }
+italic = true

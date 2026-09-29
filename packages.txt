@@ -1,5 +1,6 @@
 # Official Arch / CachyOS repository packages. No AUR or services.
 fish
+fisher
 konsole
 ttf-jetbrains-mono-nerd
 noto-fonts
@@ -17,5 +18,8 @@ eza
 jq
 git
 lazygit
+tmux
+yazi
+git-delta
 hyperfine
 tealdeer

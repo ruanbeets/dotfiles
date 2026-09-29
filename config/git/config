@@ -1,0 +1,20 @@
+[core]
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	light = false
+	line-numbers = true
+	syntax-theme = Monokai Extended
+	minus-style = "#FF6670"
+	minus-emph-style = "#FF6670 reverse"
+	plus-style = "#8FCF9A"
+	plus-emph-style = "#8FCF9A reverse"
+	file-style = "#F8ED43"
+	hunk-header-style = "#6D115F"
+	commit-style = "#D72AC0"
+	merge-conflict-begin-symbol = "╭───────"
+	merge-conflict-end-symbol = "╰───────"
+[merge]
+	conflictstyle = diff3

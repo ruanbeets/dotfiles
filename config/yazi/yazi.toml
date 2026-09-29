@@ -1,0 +1,16 @@
+[manager]
+show_hidden = true
+sort_by = "natural"
+sort_dir_first = true
+linemode = "size"
+show_symlink = true
+scrolloff = 6
+
+[preview]
+tab_size = 2
+max_width = 1000
+max_height = 1200
+
+[opener]
+edit = [{ run = '${EDITOR:-vi} "$@"', block = true, for = "unix" }]
+open = [{ run = 'xdg-open "$@"', desc = "Open", for = "linux" }]
