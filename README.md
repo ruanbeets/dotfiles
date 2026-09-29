@@ -1,7 +1,7 @@
 # Batcomputer Dotfiles
 
 Reproducible CachyOS / Arch KDE settings for a dark research workstation. The
-terminal palette follows the installed black, violet, magenta, and yellow
+terminal palette follows the installed black, Skeletor violet, and signal yellow
 wallpaper. KDE Plasma, Wayland, Konsole, and Fish remain the desktop stack.
 
 ## QUICK INSTALL
@@ -36,7 +36,7 @@ upgrade the system, switch login shells, start services, or install AUR packages
 | tealdeer | Fast command examples through `tldr <command>` |
 
 The default palette uses `#030405` black, `#0F0716` surfaces, deep violet,
-`#D72AC0` magenta, `#F6E72B` signal yellow, and `#E8E6EA` foreground. Semantic
+`#8A62C5` royal purple, `#F6E72B` signal yellow, and `#E8E6EA` foreground. Semantic
 red, green, blue, and cyan remain available for status and terminal output.
 JetBrainsMono Nerd Font is used in Konsole; terminal applications inherit it.
 

@@ -41,8 +41,8 @@ Git remains the canonical interface. Delta improves `git diff`, `git show`, and
 The `Batcomputer` profile uses JetBrainsMono Nerd Font at 10.5 pt, 20,000 lines
 of scrollback, subtle 97% opacity, a nonblinking cursor, and the Batcomputer
 truecolor scheme. The scheme keeps red for errors, green for success, yellow
-for warnings, and blue/cyan for secondary information while using magenta and
-purple as the main accents.
+for warnings, and blue/cyan for secondary information while using Skeletor
+violet with signal yellow as the main accents.
 
 Konsole's standard tab, split, search, and menu shortcuts remain configurable
 through **Settings → Configure Keyboard Shortcuts**. The installer hides the

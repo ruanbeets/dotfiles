@@ -28,7 +28,7 @@ BlinkingTextEnabled=false
 [Cursor Options]
 CursorShape=1
 UseCustomCursorColor=true
-CustomCursorColor=215,42,192
+CustomCursorColor=138,98,197
 
 [Interaction Options]
 TrimTrailingSpacesInSelectedText=true

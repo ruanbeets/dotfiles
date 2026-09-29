@@ -1,84 +1,84 @@
 [mgr]
 cwd = { fg = "#F8ED43", bold = true }
-hovered = { fg = "#F8ED43", bg = "#3B104F", bold = true }
+hovered = { fg = "#F8ED43", bg = "#322543", bold = true }
 preview_hovered = { underline = true }
 find_keyword = { fg = "#030405", bg = "#F6E72B", bold = true }
-find_position = { fg = "#D72AC0", bg = "reset", bold = true }
+find_position = { fg = "#8A62C5", bg = "reset", bold = true }
 marker_selected = { fg = "#030405", bg = "#F6E72B" }
 marker_copied = { fg = "#030405", bg = "#8FCF9A" }
 marker_cut = { fg = "#030405", bg = "#FF6670" }
-tab_active = { fg = "#030405", bg = "#D72AC0", bold = true }
-tab_inactive = { fg = "#C8C1CC", bg = "#28083E" }
+tab_active = { fg = "#030405", bg = "#8A62C5", bold = true }
+tab_inactive = { fg = "#C8C1CC", bg = "#251938" }
 border_symbol = "│"
-border_style = { fg = "#6D115F" }
+border_style = { fg = "#45335F" }
 
 [status]
 overall = { fg = "#E8E6EA", bg = "#0F0716" }
 sep_left = { open = "", close = "" }
 sep_right = { open = "", close = "" }
-perm_type = { fg = "#D72AC0" }
+perm_type = { fg = "#8A62C5" }
 perm_read = { fg = "#8FCF9A" }
 perm_write = { fg = "#F6E72B" }
 perm_exec = { fg = "#FF6670" }
 perm_sep = { fg = "#807682" }
 
 [select]
-border = { fg = "#D72AC0" }
+border = { fg = "#8A62C5" }
 active = { fg = "#F8ED43", bold = true }
 inactive = { fg = "#807682" }
 
 [input]
-border = { fg = "#D72AC0" }
+border = { fg = "#8A62C5" }
 title = { fg = "#F8ED43" }
 value = { fg = "#E8E6EA" }
 selected = { reversed = true }
 
 [tasks]
-border = { fg = "#6D115F" }
+border = { fg = "#45335F" }
 title = { fg = "#F8ED43" }
-hovered = { fg = "#D72AC0", underline = true }
+hovered = { fg = "#8A62C5", underline = true }
 
 [which]
 cols = 3
 mask = { bg = "#0F0716" }
 cand = { fg = "#F8ED43" }
 rest = { fg = "#807682" }
-desc = { fg = "#D72AC0" }
+desc = { fg = "#8A62C5" }
 separator = "  •  "
-separator_style = { fg = "#6D115F" }
+separator_style = { fg = "#45335F" }
 
 [help]
 on = { fg = "#F8ED43" }
-run = { fg = "#D72AC0" }
+run = { fg = "#8A62C5" }
 desc = { fg = "#807682" }
-hovered = { fg = "#F8ED43", bg = "#3B104F", bold = true }
+hovered = { fg = "#F8ED43", bg = "#322543", bold = true }
 footer = { fg = "#E8E6EA", bg = "#0F0716" }
 
 [filetype]
 rules = [
-  { mime = "image/*", fg = "#D72AC0" },
-  { mime = "video/*", fg = "#A31593" },
-  { mime = "audio/*", fg = "#A31593" },
+  { mime = "image/*", fg = "#8A62C5" },
+  { mime = "video/*", fg = "#68469A" },
+  { mime = "audio/*", fg = "#68469A" },
   { mime = "application/zip", fg = "#F6E72B" },
   { mime = "application/x-tar", fg = "#F6E72B" },
-  { url = "**/.git/", fg = "#D72AC0" },
+  { url = "**/.git/", fg = "#8A62C5" },
   { url = "**/*.md", fg = "#F8ED43" },
   { url = "**/*.rs", fg = "#FF9D64" },
   { url = "**/*.py", fg = "#8FCF9A" },
   { url = "**/*.json", fg = "#F6E72B" },
-  { url = "**/*.toml", fg = "#D72AC0" },
-  { url = "**/*.yaml", fg = "#D72AC0" },
-  { url = "**/*.yml", fg = "#D72AC0" },
+  { url = "**/*.toml", fg = "#8A62C5" },
+  { url = "**/*.yaml", fg = "#8A62C5" },
+  { url = "**/*.yml", fg = "#8A62C5" },
   { url = "**/*.sh", fg = "#8FCF9A" },
   { url = "**/*.fish", fg = "#8FCF9A" },
   { url = "**/*.conf", fg = "#807682" },
   { url = "**/*.log", fg = "#807682" },
   { url = "**/*.txt", fg = "#C8C1CC" },
   { url = "**/*.pdf", fg = "#FF6670" },
-  { url = "*/", fg = "#A31593" },
+  { url = "*/", fg = "#68469A" },
 ]
 
 [icon]
 prepend_conds = [
-  { if = "dir", text = "󰉋", fg = "#D72AC0" },
+  { if = "dir", text = "󰉋", fg = "#8A62C5" },
 ]

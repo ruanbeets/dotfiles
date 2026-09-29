@@ -7,22 +7,22 @@ end
 
 set -g fish_greeting
 set -g fish_color_normal E8E6EA
-set -g fish_color_command F08ADD
+set -g fish_color_command B99FE6
 set -g fish_color_param D8D2DC
 set -g fish_color_quote 8FCF9A
-set -g fish_color_redirection C58BDD
+set -g fish_color_redirection A68BD7
 set -g fish_color_end F6E72B
 set -g fish_color_error FF6670
 set -g fish_color_comment 807682
-set -g fish_color_operator D72AC0
+set -g fish_color_operator 8A62C5
 set -g fish_color_escape F6E72B
 set -g fish_color_autosuggestion 716876
-set -g fish_color_search_match --background=28083E
-set -g fish_color_selection --background=28083E
+set -g fish_color_search_match --background=251938
+set -g fish_color_selection --background=251938
 set -g fish_pager_color_prefix F6E72B --bold
 set -g fish_pager_color_completion E8E6EA
 set -g fish_pager_color_description 9A8E9E
-set -g fish_pager_color_selected_background --background=3B104F
+set -g fish_pager_color_selected_background --background=322543
 
 abbr -a g git
 abbr -a gs git status
@@ -39,7 +39,7 @@ abbr -a ll 'eza --long --group-directories-first --icons=auto'
 abbr -a la 'eza --all --long --group-directories-first --icons=auto'
 
 set -gx COLORTERM truecolor
-set -gx FZF_DEFAULT_OPTS '--height=45% --layout=reverse --border=rounded --info=inline --prompt=❯\  --pointer=▌ --marker=◆ --color=bg:#030405,bg+:#28083e,fg:#c8c1cc,fg+:#f5f1f7,hl:#f6e72b,hl+:#f8ed43,border:#6d115f,header:#a99bac,info:#807682,prompt:#d72ac0,pointer:#f6e72b,marker:#d72ac0,spinner:#f6e72b'
+set -gx FZF_DEFAULT_OPTS '--height=45% --layout=reverse --border=rounded --info=inline --prompt=❯\  --pointer=▌ --marker=◆ --color=bg:#030405,bg+:#251938,fg:#c8c1cc,fg+:#f5f1f7,hl:#f6e72b,hl+:#f8ed43,border:#45335f,header:#a99bac,info:#807682,prompt:#8a62c5,pointer:#f6e72b,marker:#8a62c5,spinner:#f6e72b'
 set -gx FZF_DEFAULT_COMMAND 'fd --type f --hidden --exclude .git'
 set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
 set -gx FZF_ALT_C_COMMAND 'fd --type d --hidden --exclude .git'

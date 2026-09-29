@@ -12,8 +12,8 @@
 	plus-style = "#8FCF9A"
 	plus-emph-style = "#8FCF9A reverse"
 	file-style = "#F8ED43"
-	hunk-header-style = "#6D115F"
-	commit-style = "#D72AC0"
+	hunk-header-style = "#45335F"
+	commit-style = "#8A62C5"
 	merge-conflict-begin-symbol = "╭───────"
 	merge-conflict-end-symbol = "╰───────"
 [merge]

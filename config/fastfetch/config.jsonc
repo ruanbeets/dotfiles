@@ -2,12 +2,13 @@
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
     "type": "builtin",
-    "source": "CachyOS",
-    "padding": {"right": 4}
+    "source": "CachyOS_small",
+    "padding": {"right": 4},
+    "color": {"1": "#68469A", "2": "#F6E72B"}
   },
   "display": {
     "separator": "  ",
-    "color": {"keys": "#D72AC0", "title": "#F6E72B", "output": "#E8E6EA"},
+    "color": {"keys": "#8A62C5", "title": "#F6E72B", "output": "#E8E6EA"},
     "key": {"width": 12},
     "size": {"ndigits": 1}
   },
@@ -18,13 +19,10 @@
     {"type": "kernel", "key": "  KERNEL"},
     {"type": "uptime", "key": "󰅐  UPTIME"},
     {"type": "de", "key": "󰍹  DESKTOP"},
-    {"type": "wm", "key": "󰖲  COMPOSITOR"},
     {"type": "terminal", "key": "  TERMINAL"},
-    {"type": "shell", "key": "󰆍  SHELL"},
     {"type": "cpu", "key": "  CPU", "format": "{name}"},
     {"type": "gpu", "key": "󰢮  GPU", "format": "{name}", "hideType": "integrated"},
     {"type": "memory", "key": "  MEMORY"},
-    {"type": "disk", "key": "󰋊  ROOT", "folders": "/"},
-    {"type": "localip", "key": "󰩟  NETWORK", "showIpv4": true, "showIpv6": false, "showMac": false}
+    {"type": "disk", "key": "󰋊  ROOT", "folders": "/"}
   ]
 }

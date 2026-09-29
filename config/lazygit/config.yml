@@ -4,11 +4,11 @@ gui:
   showRandomTip: false
   theme:
     activeBorderColor: ['#F6E72B', bold]
-    inactiveBorderColor: ['#6D115F']
-    searchingActiveBorderColor: ['#D72AC0', bold]
-    optionsTextColor: ['#D72AC0']
-    selectedLineBgColor: ['#28083E']
-    cherryPickedCommitBgColor: ['#3B104F']
+    inactiveBorderColor: ['#45335F']
+    searchingActiveBorderColor: ['#8A62C5', bold]
+    optionsTextColor: ['#8A62C5']
+    selectedLineBgColor: ['#251938']
+    cherryPickedCommitBgColor: ['#322543']
     cherryPickedCommitFgColor: ['#E8E6EA']
     unstagedChangesColor: ['#FF6670']
     defaultFgColor: ['#E8E6EA']

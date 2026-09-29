@@ -14,7 +14,7 @@ for file in kdeglobals kwinrc kcminputrc plasmarc breezerc gtk-3.0/settings.ini 
     prepare_config "$CONFIG_HOME/$file"
 done
 prepare_config "$HOME/.gtkrc-2.0"
-write_setting kdeglobals General AccentColor '215,42,192'
+write_setting kdeglobals General AccentColor '138,98,197'
 for key in font menuFont toolBarFont; do
     write_setting kdeglobals General "$key" 'Noto Sans,10,-1,5,400,0,0,0,0,0'
 done
@@ -32,6 +32,13 @@ write_setting kwinrc org.kde.kdecoration2 library org.kde.breeze
 write_setting kwinrc org.kde.kdecoration2 theme Breeze
 write_setting kwinrc org.kde.kdecoration2 BorderSize None
 if [[ ${XDG_CURRENT_DESKTOP:-} == *KDE* ]] && qdbus6 org.kde.plasmashell /PlasmaShell >/dev/null 2>&1; then
+    # Plasma skips reapplying a scheme when its name is already current. If
+    # the installed Batcomputer file changed, briefly select BreezeDark so
+    # the same-named palette is reloaded into the live session.
+    active_accent=$(kreadconfig6 --file kdeglobals --group Colors:View --key ForegroundActive)
+    if [[ $active_accent != '138,98,197' ]]; then
+        plasma-apply-colorscheme BreezeDark
+    fi
     plasma-apply-colorscheme Batcomputer
     plasma-apply-cursortheme --size 24 breeze_cursors
     qdbus6 org.kde.KWin /KWin reconfigure
