@@ -1,5 +1,4 @@
-# Batcomputer: explicit native configuration, no shell framework.
-# Global scope keeps PATH changes out of the universal-variable state file.
+# Batcomputer terminal: Fish + Tide, with local-only quality-of-life tools.
 fish_add_path --global --move ~/.local/bin
 
 if not status is-interactive
@@ -7,32 +6,23 @@ if not status is-interactive
 end
 
 set -g fish_greeting
-set -g fish_color_normal c7ced1
-set -g fish_color_command 36cfe0
-set -g fish_color_param c7ced1
-set -g fish_color_quote 81bfae
-set -g fish_color_redirection 72b8cb
-set -g fish_color_end 36cfe0
-set -g fish_color_error e27881
-set -g fish_color_comment 829199
-set -g fish_color_operator 36cfe0
-set -g fish_color_escape cba66b
-set -g fish_color_autosuggestion 68777e
-set -g fish_color_search_match --background=203b43
-set -g fish_color_selection --background=203b43
-set -g fish_pager_color_prefix 36cfe0 --bold
-set -g fish_pager_color_completion c7ced1
-set -g fish_pager_color_description 829199
-set -g fish_pager_color_selected_background --background=203b43
-
-# Built-in git prompt: tracked edits only, no untracked scan or network work.
-set -g __fish_git_prompt_showdirtystate 1
-set -g __fish_git_prompt_showuntrackedfiles 0
-set -g __fish_git_prompt_showstashstate 0
-set -g __fish_git_prompt_showupstream none
-set -g __fish_git_prompt_char_dirtystate '*'
-set -g __fish_git_prompt_char_stagedstate '+'
-set -g __fish_git_prompt_color 829199
+set -g fish_color_normal E8E6EA
+set -g fish_color_command F08ADD
+set -g fish_color_param D8D2DC
+set -g fish_color_quote 8FCF9A
+set -g fish_color_redirection C58BDD
+set -g fish_color_end F6E72B
+set -g fish_color_error FF6670
+set -g fish_color_comment 807682
+set -g fish_color_operator D72AC0
+set -g fish_color_escape F6E72B
+set -g fish_color_autosuggestion 716876
+set -g fish_color_search_match --background=28083E
+set -g fish_color_selection --background=28083E
+set -g fish_pager_color_prefix F6E72B --bold
+set -g fish_pager_color_completion E8E6EA
+set -g fish_pager_color_description 9A8E9E
+set -g fish_pager_color_selected_background --background=3B104F
 
 abbr -a g git
 abbr -a gs git status
@@ -40,23 +30,36 @@ abbr -a ga git add
 abbr -a gc git commit
 abbr -a gp git push
 abbr -a gl git log --oneline --graph --decorate
-abbr -a c clear
-abbr -a ll eza --long --group-directories-first --icons=auto
-abbr -a la eza --all --long --group-directories-first --icons=auto
 abbr -a lg lazygit
+abbr -a ff fastfetch
+abbr -a bt btop
+abbr -a gpu nvtop
+abbr -a c clear
+abbr -a ll 'eza --long --group-directories-first --icons=auto'
+abbr -a la 'eza --all --long --group-directories-first --icons=auto'
 
-set -gx FZF_DEFAULT_OPTS '--height=45% --layout=reverse --border=sharp --info=inline --prompt=❯\  --pointer=▌ --marker=+ --color=bg:#080b0d,bg+:#17262d,fg:#c7ced1,fg+:#e3e9ec,hl:#36cfe0,hl+:#36cfe0,border:#30444e,header:#829199,info:#829199,prompt:#36cfe0,pointer:#36cfe0,marker:#2aa198,spinner:#36cfe0'
+set -gx COLORTERM truecolor
+set -gx FZF_DEFAULT_OPTS '--height=45% --layout=reverse --border=rounded --info=inline --prompt=❯\  --pointer=▌ --marker=◆ --color=bg:#030405,bg+:#28083e,fg:#c8c1cc,fg+:#f5f1f7,hl:#f6e72b,hl+:#f8ed43,border:#6d115f,header:#a99bac,info:#807682,prompt:#d72ac0,pointer:#f6e72b,marker:#d72ac0,spinner:#f6e72b'
 set -gx FZF_DEFAULT_COMMAND 'fd --type f --hidden --exclude .git'
 set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
 set -gx FZF_ALT_C_COMMAND 'fd --type d --hidden --exclude .git'
-if type -q fzf
+set -gx FZF_CTRL_T_OPTS '--preview "bat --color=always --style=numbers --line-range=:240 {} 2>/dev/null" --preview-window=right:60%:wrap'
+set -gx FZF_ALT_C_OPTS '--preview "eza --tree --level=2 --icons=auto {} 2>/dev/null | head -200" --preview-window=right:60%'
+if type -q fzf_key_bindings
     fzf_key_bindings
 end
 if type -q zoxide
     zoxide init fish | source
 end
 
-# Machine-local additions are intentionally outside Git.
+# Show one dashboard per terminal environment. Child Fish shells inherit the
+# marker; new Konsole tabs/windows start from Konsole's own environment. tmux
+# panes stay banner-free, so splits never repeat the dashboard.
+if test -z "$TMUX"; and not set -q BATCOMPUTER_FASTFETCH_SHOWN; and type -q fastfetch
+    fastfetch
+    set -gx BATCOMPUTER_FASTFETCH_SHOWN 1
+end
+
 if test -r $__fish_config_dir/local.fish
     source $__fish_config_dir/local.fish
 end

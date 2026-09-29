@@ -17,7 +17,7 @@ The one-shot `panel.js` only acts if there is exactly one top panel containing
 one KVitals widget. It filters the **existing** pinned sensor identifiers to CPU
 usage/temperature, GPU usage/temperature, RAM percentage and network throughput.
 It removes that panel's standalone disk-activity widget and styles KVitals with
-14 px JetBrains Mono, cyan labels and cool grey values. Network values are ordered
+14 px JetBrains Mono, magenta accents and soft grey values. Network values are ordered
 download then upload, with a `NET ↓/↑` label. It never invents GPU IDs,
 changes the update interval, creates widgets or modifies the KVitals source.
 It preserves the existing panel dimensions and widget order.
@@ -43,12 +43,12 @@ It preserves the existing panel dimensions and widget order.
 
 If automatic refinement reports an ambiguous panel layout, use KVitals settings:
 General → font **JetBrainsMono Nerd Font**, **14 px**, display **Text**, merge
-related metrics, separators enabled. Colors: values `#C7CED1`, labels `#36CFE0`,
-icons/accent `#36CFE0`. Keep the working sensor bindings and refresh interval.
+related metrics, separators enabled. Colors: values `#E8E6EA`, labels `#D72AC0`,
+icons/accent `#D72AC0`. Keep the working sensor bindings and refresh interval.
 
 ## Wallpaper and remaining GUI settings
 
-The current black geometric wallpaper is untouched. Keep your own copy outside
+The current black Skeletor illustration wallpaper is untouched. Keep your own copy outside
 Git. On a fresh system, right-click desktop → **Desktop and Wallpaper Settings**
 and select it for each display. Monitor placement/scaling stays in System Settings
 → **Display & Monitor → Display Configuration** and is never imported here.
@@ -63,7 +63,7 @@ is stored in Qt window state; that generated geometry is deliberately not copied
 
 KRunner shortcuts and native effects are left alone. If desired, enable stock
 Blur in **System Settings → Window Management → Desktop Effects**; the opaque
-terminal intentionally does not need blur. NVTop keeps its upstream UI colors.
+terminal uses subtle transparency without requiring blur. NVTop keeps its upstream UI colors.
 
 ## Verification and rollback
 

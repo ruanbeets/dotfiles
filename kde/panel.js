@@ -30,9 +30,9 @@ if (candidates.length !== 1) {
         vitals.writeConfig('separatorOpacity', 0.28);
         vitals.writeConfig('labelOpacity', 1);
         vitals.writeConfig('useCustomColors', true);
-        vitals.writeConfig('iconColor', '#36cfe0');
-        vitals.writeConfig('labelColor', '#36cfe0');
-        vitals.writeConfig('fontColor', '#c7ced1');
+        vitals.writeConfig('iconColor', '#D72AC0');
+        vitals.writeConfig('labelColor', '#D72AC0');
+        vitals.writeConfig('fontColor', '#E8E6EA');
         vitals.reloadConfig();
         panel.widgets('org.kde.plasma.systemmonitor.diskactivity').forEach(function(w) { w.remove(); });
         print('KVitals refined; CPU/GPU/RAM/network sensor bindings preserved.');

@@ -7,7 +7,7 @@ LocalTabTitleFormat=%d : %n
 RemoteTabTitleFormat=%h : %d
 TerminalColumns=120
 TerminalRows=32
-TerminalMargin=6
+TerminalMargin=8
 StartInCurrentSessionDir=true
 
 [Appearance]
@@ -28,7 +28,7 @@ BlinkingTextEnabled=false
 [Cursor Options]
 CursorShape=1
 UseCustomCursorColor=true
-CustomCursorColor=54,207,224
+CustomCursorColor=215,42,192
 
 [Interaction Options]
 TrimTrailingSpacesInSelectedText=true

@@ -14,7 +14,7 @@ for file in kdeglobals kwinrc kcminputrc plasmarc breezerc gtk-3.0/settings.ini 
     prepare_config "$CONFIG_HOME/$file"
 done
 prepare_config "$HOME/.gtkrc-2.0"
-write_setting kdeglobals General AccentColor '54,207,224'
+write_setting kdeglobals General AccentColor '215,42,192'
 for key in font menuFont toolBarFont; do
     write_setting kdeglobals General "$key" 'Noto Sans,10,-1,5,400,0,0,0,0,0'
 done

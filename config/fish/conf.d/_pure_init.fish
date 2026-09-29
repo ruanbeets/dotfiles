@@ -1,1 +1,1 @@
-# Override CachyOS's vendor Pure initialization without uninstalling it.
+# Keep CachyOS's vendor Pure initialization from replacing the tracked Tide prompt.
